@@ -4,8 +4,22 @@
 *   @Purpose: To print 2D Array 
 *
 */
-const arrayMain = require('./array2DBl');    // to which file should be call
 const input = require('readline-sync');
-let numberOfrow = input.questionInt("Enter number of rows : ");            // number of rows 
-let numberOfcol = input.questionInt("Enter number of coloumn : ");         // number of coloumns
-arrayMain(numberOfrow, numberOfcol);                                       // passing number of rows and columns as parameter
+const arrayMain = require('./array2DBl');    // to which file should be call
+
+const validate = () => {
+    {
+        let numberOfrow = input.questionInt("Enter number of rows : ");            // number of rows
+        let numberOfcol = input.questionInt("Enter number of coloumn : ");         // number of coloumns
+
+        if (/(1-9)/.test(numberOfrow) || /(1-9)/.test(numberOfcol)) {               //checking number of rows and coloumns are integer 
+            arrayMain(numberOfrow, numberOfcol);
+            // console.log("Enter valid rows and cols");
+        }
+        else {
+            // arrayMain(numberOfrow, numberOfcol);     
+            console.log("Enter valid rows and cols");                               
+        }
+    }
+}
+validate();

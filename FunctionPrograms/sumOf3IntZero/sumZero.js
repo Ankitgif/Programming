@@ -9,14 +9,20 @@
 *
 */
 
-const sumOfIntmain = require('./sumZeroBl');       // in which file function should call
+const sumOfIntmain = require('./sumZeroBl');                          // in which file function should call
 const input = require('readline-sync');
-let arr = [];                                       // initializing an array
+let arr = [];                                                         // initializing an array
 let size = input.questionInt("Enter array size : ");
-for (let element = 0; element < size; element++) {
-    arr[element] = input.questionInt("Enter Elements: "); // taking array element as input
+if (size>0) {                                               //checking size of array is valid or not
+    for (let element = 0; element < size; element++) {
+        arr[element] = input.questionInt("Enter Elements: ");             // taking array element as input
+    }
+}
+else {
+    console.log("Enter valid size of array");
 }
 console.log(arr);
-sumOfIntmain(arr, size);          // passing array and its size as an argument
+sumOfIntmain(arr, size);                                              // passing array and its size as an argument
+
 
 
