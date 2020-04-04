@@ -9,13 +9,17 @@
  *                         
  **/
 const powermain = require('./powerOf2Bl');           // in which file to call the function
-const input = require('readline-sync');              
+const input = require('readline-sync');
 let number = input.questionInt("Enter a number : ");
 let power = 0;
-if (number < 31) {                                   // checking number should be less than 31
-    powermain(number, power);                        // passing parameter to the function
+// if (number < 31) {                                   
+//     powermain(number, power);                        
+// }
+// else {
+//     console.log("Enter valid number");
+// }
+const validate = () => {
+    let pattern = /^([1-9]|[12][0-9]|3[01])$/                       // checking number should be less than 31
+    return pattern.test(number) ? powermain(number, power) : console.log("Enter valid number");
 }
-else {
-    console.log("Enter valid number");
-}
-
+validate();
