@@ -11,7 +11,11 @@
 
 const flipCoinmain = require('./flipCoinsBl');     // in which file function should call
 const input = require('readline-sync');
-let numberOfFlips = input.questionInt("Enter number of flips : ");   // taking input, how mant times coin to be flipped
 let tails = 0;
 let heads = 0;
-flipCoinmain(numberOfFlips, tails, heads);                 // passing the parameters to the function
+const validate = () => {
+    let numberOfFlips = input.questionInt("Enter number of flips : ");   // taking input, how mant times coin to be flipped
+    let pattern = /^[1-9]{1,}[0-9]$/
+    return pattern.test(numberOfFlips) ? flipCoinmain(numberOfFlips, tails, heads) : console.log("Enter valid number");
+}
+validate();
