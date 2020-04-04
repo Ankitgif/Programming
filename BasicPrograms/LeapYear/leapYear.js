@@ -12,10 +12,8 @@
 const leapYearmain = require('./leapYearBl')                // in which file to call the function
 let input = require('readline-sync')
 let year = input.questionInt("Enter a year to check leap year : ");
-if(/^[0-9]{4}$/.test(year))                                 // checking year should be of 4 digit
-{
-    leapYearmain(year);                                     // passing parameter to a function
+const validate = () => {
+    let pattern = /^[1-9]{1}[0-9]{3}$/                                       // checking year should be of 4 digit
+    return pattern.test(year) ? leapYearmain(year) : console.log("Enter a valid year");
 }
-else {
-    console.log("Enter a valid year");
-}
+validate();
