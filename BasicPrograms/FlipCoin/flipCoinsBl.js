@@ -25,8 +25,8 @@ flipCoin = (numberOfFlips, tails, heads) =>                 // arrow function ac
         console.log("Number of heads : ", heads);           // print number of times heads occur
         let tailPercent = (100 * tails) / numberOfFlips;    // calculate percentage of tails
         let headPercent = (100 * heads) / numberOfFlips;    // calculate percentage of heads
-        console.log(tailPercent, "%");                      // print percentage of tails
-        console.log(headPercent, "%");                      // print percentage of heads
+        console.log(tailPercent.toFixed(2), "%");                      // print percentage of tails
+        console.log(headPercent.toFixed(2), "%");                      // print percentage of heads
     }
     catch (error) {
         console.log(error);
