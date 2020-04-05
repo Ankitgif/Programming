@@ -11,7 +11,7 @@ const validate = () => {
     {
         let numberOfrow = input.questionInt("Enter number of rows : ");            // number of rows
         let numberOfcol = input.questionInt("Enter number of coloumn : ");         // number of coloumns            
-        let pattern = /^[1-9]$/                  //checking number of rows and coloumns are integer
+        let pattern = /^[1-9]{1}[0-9]{1,}$/                  //checking number of rows and coloumns are integer
         return pattern.test(numberOfrow) && pattern.test(numberOfcol) ? arrayMain(numberOfrow, numberOfcol) : console.log("Enter valid row and col");
 
     }
