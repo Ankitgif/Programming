@@ -13,7 +13,8 @@ const sumOfIntmain = require('./sumZeroBl');                          // in whic
 const input = require('readline-sync');
 let arr = [];                                                         // initializing an array
 let size = input.questionInt("Enter array size : ");
-if (size>0) {                                               //checking size of array is valid or not
+let pattern = /^[1-9]{1,}$/
+if (pattern.test(size)) {                                               //checking size of array is valid or not
     for (let element = 0; element < size; element++) {
         arr[element] = input.questionInt("Enter Elements: ");             // taking array element as input
     }
@@ -23,6 +24,5 @@ else {
 }
 console.log(arr);
 sumOfIntmain(arr, size);                                              // passing array and its size as an argument
-
 
 
