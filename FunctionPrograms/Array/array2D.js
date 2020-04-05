@@ -5,21 +5,15 @@
 *
 */
 const input = require('readline-sync');
-const arrayMain = require('./array2DBl');    // to which file should be call
+const arrayMain = require('./array2DBl');    // to which file fuction should be call
 
 const validate = () => {
     {
         let numberOfrow = input.questionInt("Enter number of rows : ");            // number of rows
-        let numberOfcol = input.questionInt("Enter number of coloumn : ");         // number of coloumns
+        let numberOfcol = input.questionInt("Enter number of coloumn : ");         // number of coloumns            
+        let pattern = /^[1-9]$/                  //checking number of rows and coloumns are integer
+        return pattern.test(numberOfrow) && pattern.test(numberOfcol) ? arrayMain(numberOfrow, numberOfcol) : console.log("Enter valid row and col");
 
-        if (/(1-9)/.test(numberOfrow) || /(1-9)/.test(numberOfcol)) {               //checking number of rows and coloumns are integer 
-            arrayMain(numberOfrow, numberOfcol);
-            // console.log("Enter valid rows and cols");
-        }
-        else {
-            // arrayMain(numberOfrow, numberOfcol);     
-            console.log("Enter valid rows and cols");                               
-        }
     }
 }
 validate();
