@@ -11,7 +11,7 @@ const distanceMain = require('./distanceBl');                       //in which f
 const validate = () => {
     let point_x = input.questionInt("Enter value of point x : ");
     let point_y = input.questionInt("Enter value of point y : ");
-    let pattern = /^[1-9]$/
+    let pattern = /^[1-9]{1,}$/
     return pattern.test(point_x) || pattern.test(point_y) ? console.log(Distance = distanceMain(point_x, point_y)) : console.log("Enter valid points");
 
 }
